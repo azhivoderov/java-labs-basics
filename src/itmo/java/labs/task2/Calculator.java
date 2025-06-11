@@ -16,11 +16,11 @@ public class Calculator {
     }
 
     //Method division
-    public Integer overLoadedDiv(Integer a, Integer b){
+    public Double overLoadedDiv(Integer a, Integer b){
         if (b == 0) {
             return null;
         }
-        return a / b;
+        return (double)a / b;
     }
 
     public Double overLoadedDiv(Double a, Double b){
@@ -30,11 +30,11 @@ public class Calculator {
         return a / b;
     }
 
-    public Long overLoadedDiv(Long a, Long b){
+    public Double overLoadedDiv(Long a, Long b){
         if (b == 0) {
             return null;
         }
-        return a / b;
+        return (double)a/ b;
     }
 
     //Method Multiplication
@@ -62,5 +62,4 @@ public class Calculator {
     public Long overLoadedSubtraction(Long a, Long b){
         return a - b;
     }
-
 }
