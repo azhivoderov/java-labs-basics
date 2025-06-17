@@ -4,15 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Part1 {
-    public static void main(String[] args) {
-        //1
-        for (int i = 1; i < 100; i++) {
-            if (i % 2 != 0) {
-                System.out.println(i);
-            }
-        }
 
-        //2
+    public static void div3and5() {
         System.out.print("Делится на 3: ");
         for (int i = 1; i < 100; i++) {
             if (i % 3 == 0) {
@@ -37,20 +30,14 @@ public class Part1 {
             }
         }
         System.out.println();
+    }
 
-        //3
-        System.out.println(method3());
-
-        //4
-        System.out.println(method4());
-
-        //5
-        int[] array = {3, -3, 7, 4, 5, 4, 3};
-        System.out.println(method5(array, 3));
-
-        //6
-        System.out.println(method6(array));
-
+    public static void unevenNumbers() {
+        for (int i = 1; i < 100; i++) {
+            if (i % 2 != 0) {
+                System.out.println(i);
+            }
+        }
     }
 
     public static boolean method6(int[] array) {
