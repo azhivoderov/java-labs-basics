@@ -31,15 +31,13 @@ public class JavaProgram {
         //Part2
         //1
         int[] array1 = {1, 2, 3, 1, 2, 4};
-       // double[] array2 = {5.2, 17.3, 10, 47.5, 53.6, 64.0, 82.3};
         System.out.println(checkArraySortIncrement(array1));
-       // System.out.println(checkArraySortIncrement(array2));
 
         //2
         System.out.println(createArray());
 
         //3
-        arrayTransformation(array1);
+        int[] arr = arrayTransformation(array1);
 
         //4
         findUniqueNumber(array1);

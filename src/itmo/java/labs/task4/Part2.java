@@ -29,17 +29,6 @@ public class Part2 {
         }
         return "OK";
     }
-    public static String checkArraySortIncrement(double[] array) {
-        if (array.length < 2) {
-            return "Length array < 2";
-        }
-        for (int i = 1; i < array.length; i++) {
-            if (array[i-1]>array[i]){
-                return "Please, try again";
-            }
-        }
-        return "OK";
-    }
 
     public static int[] arrayTransformation(int[] array) {
         System.out.println("Array 1: " + Arrays.toString(array));
@@ -58,8 +47,8 @@ public class Part2 {
         int[] arrayCount = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] == array[j]) {
+            for (int k : array) {
+                if (array[i] == k) {
                     arrayCount[i]++;
                 }
             }
