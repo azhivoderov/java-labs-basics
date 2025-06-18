@@ -12,10 +12,10 @@ public class Task5 {
             return maxString;
         }
         String[] strings = s.split("\\s");
-        for (int i = 0; i < strings.length; i++) {
-            if (maxLength < strings[i].length()) {
-                maxLength = strings[i].length();
-                maxString = strings[i];
+        for (String string : strings) {
+            if (maxLength < string.length()) {
+                maxLength = string.length();
+                maxString = string;
             }
         }
         return maxString;
