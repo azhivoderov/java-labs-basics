@@ -1,28 +1,24 @@
 package itmo.java.labs.task7;
 
 public class Plane {
-    private  Integer wingWeight;
 
-    public void setWingWeight(Integer wingWeight) {
-        this.wingWeight = wingWeight;
-    }
-
-    public void printInfo(){
-        System.out.println(wingWeight);
-    }
-
-    class InnerWing {
+    static class InnerWing {
+        public Integer wingWeight;
 
         public InnerWing(Integer wingWeight) {
-            setWingWeight(wingWeight);
+            this.wingWeight = wingWeight;
         }
 
-        public void printWingWeight() {
-            System.out.println(wingWeight);
+        public Integer getWingWeight() {
+            return wingWeight;
         }
 
-        public void setWingWeightPlane(Integer wingWeight) {
-            setWingWeight(wingWeight);
+        public void setWingWeight(Integer wingWeight) {
+            this.wingWeight = wingWeight;
+        }
+
+        public void printWeight(){
+            System.out.println(this.wingWeight.toString());
         }
     }
 
