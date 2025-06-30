@@ -22,13 +22,7 @@ public class UserMap {
     }
 
     public Integer getValue(String name){
-        Set<User> mySet = map.keySet();
-        for (User user : mySet) {
-            if (user.getName().equalsIgnoreCase(name)) {
-                return map.get(user);
-            }
-        }
-        return 0;
+        return map.getOrDefault(new User(name), 0);
     }
 
 }
