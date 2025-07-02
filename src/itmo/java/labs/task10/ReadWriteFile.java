@@ -1,11 +1,8 @@
 package itmo.java.labs.task10;
 
 import java.io.*;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import static java.awt.SystemColor.text;
 
 public class ReadWriteFile {
 
