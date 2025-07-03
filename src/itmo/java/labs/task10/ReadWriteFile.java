@@ -1,19 +1,18 @@
 package itmo.java.labs.task10;
 
 import java.io.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class ReadWriteFile {
 
-    public static Set<String> readFile(File file){
+    public static LinkedList<String> readFile(File file){
         String str;
 
         if(!file.exists() && file.isDirectory()) {
             return null;
         }
 
-        Set<String> strings = new LinkedHashSet<>();
+        LinkedList<String> strings = new LinkedList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))){
             while ((str = reader.readLine()) != null){
                 strings.add(str);
@@ -35,4 +34,13 @@ public class ReadWriteFile {
         }
     }
 
+    public static void unificationFiles(File sourceFile, File receiverFile) {
+
+        readFile(receiverFile).forEach(str -> addFile(sourceFile, str+'\n'));
+
+    }
+
+    public static void checkFile(File sourceFile, String str) {
+
+    }
 }
