@@ -1,7 +1,11 @@
 package itmo.java.labs.task10;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.OpenOption;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
+import java.util.regex.Matcher;
 
 public class ReadWriteFile {
 
@@ -42,5 +46,19 @@ public class ReadWriteFile {
 
     public static void checkFile(File sourceFile, String str) {
 
+        LinkedList<String> linkedList = readFile(sourceFile);
+
+        try {
+            new FileOutputStream(sourceFile, false).close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        if (linkedList != null) {
+            for (String s : linkedList) {
+                s = s.replaceAll("[^\\p{Alnum} ]", Matcher.quoteReplacement(str));
+                addFile(sourceFile, s);
+            }
+        }
     }
 }
