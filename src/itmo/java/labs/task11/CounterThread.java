@@ -1,18 +1,24 @@
 package itmo.java.labs.task11;
 
+import java.util.concurrent.CountDownLatch;
+
 public class CounterThread extends Thread {
+    Counter counter;
     Integer countOperation;
+    CountDownLatch countDownLatch;
+
     @Override
     public void run() {
         for (int i = 0; i < countOperation; i++) {
-            synchronized (this){
-                Counter.increment();
-            }
+                counter.increment();
         }
+        countDownLatch.countDown();
     }
 
-    public CounterThread(Integer countOperation) {
+    public CounterThread(Counter counter, Integer countOperation, CountDownLatch countDownLatch ) {
+        this.counter = counter;
         this.countOperation = countOperation;
+        this.countDownLatch = countDownLatch;
         this.start();
     }
 
